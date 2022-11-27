@@ -16,7 +16,8 @@ This script uses [Monaco](https://dynatrace-oss.github.io/dynatrace-monitoring-a
 3) Run the script and look for a folder called `dt_backup` in the same directory.
 
 ```
-curl -L https://link-to-follow... \
+
+curl -L https://raw.githubusercontent.com/dynatrace-perfclinics/community-tips-tricks/main/ep5/dt_backup.sh \
 | bash -s -- \
 https://abc12345.live.dynatrace.com \
 dt0c01.sample.secret
