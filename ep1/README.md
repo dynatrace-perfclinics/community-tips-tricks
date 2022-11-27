@@ -4,7 +4,7 @@
 - Alert on Missing Data: Alert when your monitoring is not working as expected
 - Custom Problem Tiles: Filter on problem tiles on custom entities, alerting profiles, and more …
 
-## Video
+## Video / Content
 ```
 https://www.youtube.com/watch?v=Yg3fV63hZEk
 ```
