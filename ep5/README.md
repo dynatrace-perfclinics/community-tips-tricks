@@ -5,7 +5,7 @@
 ## Video / Content
 
 ```
-YT Link To Follow...
+https://www.youtube.com/watch?v=G02fIMIy-wg
 ```
 
 ## Quick Explanation
