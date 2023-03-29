@@ -5,7 +5,5 @@
 - Custom Problem Tiles: Filter on problem tiles on custom entities, alerting profiles, and more …
 
 ## Video / Content
-```
-https://www.youtube.com/watch?v=Yg3fV63hZEk
-```
 
+[![Episode 1](https://img.youtube.com/vi/Yg3fV63hZEk/0.jpg)](https://www.youtube.com/watch?v=Yg3fV63hZEk)
