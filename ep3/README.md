@@ -5,6 +5,4 @@
 
 ## Video / Content
 
-```
-https://www.youtube.com/watch?v=Hh2tWerFnjk
-```
+[![Episode 3](https://img.youtube.com/vi/Hh2tWerFnjk/0.jpg)](https://www.youtube.com/watch?v=Hh2tWerFnjk)
