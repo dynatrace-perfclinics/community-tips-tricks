@@ -5,6 +5,5 @@
 - Validating and checking PDF content in synthetic: https://dynatr.ac/3RXGsLj
 
 ## Video / Content
-```
-https://www.youtube.com/watch?v=cBQ_AF5J8m8
-```
+
+[![Episode 2](https://img.youtube.com/vi/cBQ_AF5J8m8/0.jpg)](https://www.youtube.com/watch?v=cBQ_AF5J8m8)
