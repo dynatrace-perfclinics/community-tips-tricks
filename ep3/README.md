@@ -1,4 +1,4 @@
-# Episode 3
+# Episode 3: Advanced SSL Certificate Checks
 
 - Advanced SSL Certificate Check Plugin: https://dynatr.ac/3LTvX9J
 - Community Discussion on SSL Checks: https://dynatr.ac/3CdKQR8
