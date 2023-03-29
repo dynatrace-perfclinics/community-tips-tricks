@@ -1,12 +1,10 @@
-# Episode 5
+# Episode 5: Extracting Dynatrace Configuration with Monaco
 
 - Download Dynatrace configuration backups with a single command
 
 ## Video / Content
 
-```
-https://www.youtube.com/watch?v=G02fIMIy-wg
-```
+[![Episode 5](https://img.youtube.com/vi/G02fIMIy-wg/0.jpg)](https://www.youtube.com/watch?v=G02fIMIy-wg)
 
 ## Quick Explanation
 This script uses [Monaco](https://dynatrace-oss.github.io/dynatrace-monitoring-as-code/) to download a backup of all Dynatrace configuration from a given tenant.
