@@ -1,4 +1,4 @@
-# Episode 4
+# Episode 4: Ping every second and RUM Troubleshooting
 
 - Ping every second: Getting detailed network latency and availability down to 1-second interval
 - RUM Troubleshooting: How to diagnose broken apps when enabling RUM
