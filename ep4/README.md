@@ -6,6 +6,4 @@
 
 ## Video / Content
 
-```
-https://www.youtube.com/watch?v=EaRKx0e8WFc
-```
+[![Episode 4](https://img.youtube.com/vi/EaRKx0e8WFc/0.jpg)](https://www.youtube.com/watch?v=EaRKx0e8WFc)
