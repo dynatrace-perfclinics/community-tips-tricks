@@ -1,4 +1,4 @@
-# Episode 2
+# Episode 2: REST Request Naming and RUM Troubleshooting
 
 - Global Request Naming for REST Service: https://dynatr.ac/3f7tex1
 - Real User Monitoring (RUM) Injection Check Tips: https://dynatr.ac/3LrQyls
