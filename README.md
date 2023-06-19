@@ -12,3 +12,5 @@ The Dynatrace Community has a lot of Tips &amp; Tricks on how to more efficientl
 7. [Dynatrace APIs made easy with Postman and Python](./ep7/readme.md)
 8. [Time-based auto-tagging of Dynatrace entities](./ep8/readme.md)
 9. [Advanced Dynatrace Configuration as Code with GO Templates for Monaco](./ep9/readme.md)
+10. [Dynatrace Diagnostics Best Practices from Dynatrace](./ep10/readme.md)
+11. [Best Practices on DQL Timeseries](./ep11/readme.md)
