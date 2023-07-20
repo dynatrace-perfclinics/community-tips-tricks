@@ -1,10 +1,8 @@
-# Episode 11: Best Practices on DQL Timeseries
+# Episode 12: Best Practices on JavaScript in Dynatrace Platform
 
-- DQL Tutorial: https://www.youtube.com/watch?v=F2VbVqNlswk&t=0s
-- DQL Documentation: https://dynatr.ac/3JfUhTe 
-- DQL timeseries: https://dynatr.ac/3P9eD4m
-- DQL lookup: https://www.dynatrace.com/support/hel...
+- Dashboard used in Video: [Observability%20Clinic%20-%20Community%20Episode%2012.json]
+- Dynatrace Developer Portal: https://developer.dynatrace.com
 
 ## Video / Content
 
-[![Episode 11](https://img.youtube.com/vi/IbUGrirjCH4/0.jpg)](https://www.youtube.com/watch?v=IbUGrirjCH4)
+[![Episode 12](https://img.youtube.com/vi/IbUGrirjCH4/0.jpg)](https://www.youtube.com/watch?v=IbUGrirjCH4)
