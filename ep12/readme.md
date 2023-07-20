@@ -5,4 +5,4 @@
 
 ## Video / Content
 
-[![Episode 12](https://img.youtube.com/vi/IbUGrirjCH4/0.jpg)](https://www.youtube.com/watch?v=IbUGrirjCH4)
+[![Episode 12](https://img.youtube.com/vi/xZmMViYI6Wk/0.jpg)](https://www.youtube.com/watch?v=xZmMViYI6Wk)
