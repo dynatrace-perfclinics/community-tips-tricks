@@ -15,3 +15,4 @@ The Dynatrace Community has a lot of Tips &amp; Tricks on how to more efficientl
 10. [Dynatrace Diagnostics Best Practices from Dynatrace](./ep10/readme.md)
 11. [Best Practices on DQL Timeseries](./ep11/readme.md)
 12. [JavaScript in Dynatrace Best Practices](./ep12/readme.md)
+13. [Automatic Infrastructure Rightsizing with Dynatrace Workflows](./ep13/readme.md)
