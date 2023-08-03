@@ -2,9 +2,8 @@
 
 - [Dynatrace Version Detection](https://www.dynatrace.com/support/help/platform-modules/cloud-automation/release-monitoring/version-detection-strategies)
 - [Dynatrace Ownership](https://www.dynatrace.com/support/help/manage/ownership)
-- [Sample manifest files from demo]()
-
-Code Snippets below video!
+- [Argo Rollouts](https://argoproj.github.io/rollouts/)
+- [Sample manifest files from demo](https://github.com/Liquid-Reply/dynatrace-canary-rollout)
 
 ## Video / Content
 
