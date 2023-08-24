@@ -17,3 +17,5 @@ The Dynatrace Community has a lot of Tips &amp; Tricks on how to more efficientl
 12. [JavaScript in Dynatrace Best Practices](./ep12/readme.md)
 13. [Automatic Infrastructure Rightsizing with Dynatrace Workflows](./ep13/readme.MD)
 14. [Argo Rollouts with Dynatrace](./ep14/readme.md)
+15. [SLO Error Budget Burn Rate Based Alerting](./ep15/readme.MD)
+16. [Dynatrace Tenant Review](./ep16/readme.md)
