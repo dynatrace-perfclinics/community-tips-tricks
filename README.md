@@ -19,3 +19,4 @@ The Dynatrace Community has a lot of Tips &amp; Tricks on how to more efficientl
 14. [Argo Rollouts with Dynatrace](./ep14/readme.md)
 15. [SLO Error Budget Burn Rate Based Alerting](./ep15/readme.MD)
 16. [Dynatrace Tenant Review](./ep16/readme.md)
+17. [Validating AWS Well-Architected Framework Pillars](./ep17/readme.md)
