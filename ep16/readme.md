@@ -4,5 +4,5 @@
 
 ## Video / Content
 
-[![Episode 16](https://img.youtube.com/vi/Dynatrace Tenant Review/0.jpg)](https://www.youtube.com/watch?v=Dynatrace Tenant Review)
+[![Episode 16](https://img.youtube.com/vi/BjhUvVNMTaY/0.jpg)](https://www.youtube.com/watch?v=BjhUvVNMTaY)
 
