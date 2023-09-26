@@ -7,5 +7,4 @@
 
 ## Video / Content
 
-[![Episode 17](https://img.youtube.com/vi/BjhUvVNMTaY/0.jpg)](https://www.youtube.com/watch?v=BjhUvVNMTaY)
-
+[![Episode 17](https://img.youtube.com/vi/Rz813IQ6pLE/0.jpg)](https://www.youtube.com/watch?v=Rz813IQ6pLE)
