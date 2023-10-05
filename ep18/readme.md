@@ -1,4 +1,4 @@
-# Episode 17: Jenkins Pipeline Analytics with OpenTelemetry
+# Episode 18: Jenkins Pipeline Analytics with OpenTelemetry
 
 Access the [How to Analyze Jenkins Jobs using OpenTelemetry Notebook](https://wkf10640.apps.dynatrace.com/ui/document/v0/#share=da5efb6a-b897-45c7-86e4-1f39cc33ee90) shown in the session on the Dynatrace Playground Tenant!
 
