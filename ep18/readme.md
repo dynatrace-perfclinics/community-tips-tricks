@@ -12,3 +12,11 @@ Here all the additional links from this session:
 ## Video / Content
 
 [![Episode 18](https://img.youtube.com/vi/z9H0zeLwWmI/0.jpg)](https://www.youtube.com/watch?v=z9H0zeLwWmI)
+
+## OpenTelemetry Trace from Jenkins Example
+
+![](./jenkins_oteltrace.png)
+
+## Detecting Execution Patterns across traces
+
+![](./jenkins_oteltrace_patterns.png)
