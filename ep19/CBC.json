@@ -1,0 +1,75 @@
+// Example tile code for a Categorical Bar Chart
+
+
+import { rumUserSessionsClient } from "@dynatrace-sdk/client-classic-environment-v1";
+
+export default async function () {
+  const startTime = Date.parse($dt_timeframe_from).toString();  // Get Dashboard Start Time
+  const endTime = Date.parse($dt_timeframe_to).toString();      // Get Dashboard End Time
+  const usqlQuery1 = 'SELECT count(*) as "CNT" FROM useraction WHERE  Duration<=2000';
+  const usqlQuery3 = 'SELECT count(*) as "CNT" FROM useraction WHERE  Duration>2000 and Duration<=3000';
+  const usqlQuery5 = 'SELECT count(*) as "CNT" FROM useraction WHERE  Duration>3000 and Duration<=4000';
+  const usqlQuery7 = 'SELECT count(*) as "CNT" FROM useraction WHERE  Duration>4000 and Duration<=5000';
+  const usqlQuery9 = 'SELECT count(*) as "CNT" FROM useraction WHERE  Duration>5000 and Duration<=6000';
+  const usqlQuery11 = 'SELECT count(*) as "CNT" FROM useraction WHERE  Duration>6000 and Duration<=7000';
+  const usqlQuery13 = 'SELECT count(*) as "CNT" FROM useraction WHERE  Duration>7000 and Duration<=8000';
+  const usqlQuery15 = 'SELECT count(*) as "CNT" FROM useraction WHERE  Duration>8000 and Duration<=9000';
+  const usqlQuery17 = 'SELECT count(*) as "CNT" FROM useraction WHERE  Duration>9000 and Duration<=10000';
+  const usqlQuery19 = 'SELECT count(*) as "CNT" FROM useraction WHERE  Duration>10000';
+  const response1 = await  rumUserSessionsClient.getUsqlResultAsTable({ query: usqlQuery1, startTimestamp: startTime, endTimestamp: endTime });
+  const response3 = await  rumUserSessionsClient.getUsqlResultAsTable({ query: usqlQuery3, startTimestamp: startTime, endTimestamp: endTime });
+  const response5 = await  rumUserSessionsClient.getUsqlResultAsTable({ query: usqlQuery5, startTimestamp: startTime, endTimestamp: endTime });
+  const response7 = await  rumUserSessionsClient.getUsqlResultAsTable({ query: usqlQuery7, startTimestamp: startTime, endTimestamp: endTime });
+  const response9 = await  rumUserSessionsClient.getUsqlResultAsTable({ query: usqlQuery9, startTimestamp: startTime, endTimestamp: endTime });
+  const response11 = await  rumUserSessionsClient.getUsqlResultAsTable({ query: usqlQuery11, startTimestamp: startTime, endTimestamp: endTime });
+  const response13 = await  rumUserSessionsClient.getUsqlResultAsTable({ query: usqlQuery13, startTimestamp: startTime, endTimestamp: endTime });
+  const response15 = await  rumUserSessionsClient.getUsqlResultAsTable({ query: usqlQuery15, startTimestamp: startTime, endTimestamp: endTime });
+  const response17 = await  rumUserSessionsClient.getUsqlResultAsTable({ query: usqlQuery17, startTimestamp: startTime, endTimestamp: endTime });
+  const response19 = await  rumUserSessionsClient.getUsqlResultAsTable({ query: usqlQuery19, startTimestamp: startTime, endTimestamp: endTime });
+
+return {
+    records: [
+     {
+        'Bucket': "<=2s",
+        'Count': response1["values"][0][0]
+      },
+    {   'Bucket': "2s-3s",
+        'Count': response3["values"][0][0]
+      },
+    {   'Bucket': "3s-4s",
+        'Count': response5["values"][0][0]
+      },
+    {   'Bucket': "4s-5s",
+        'Count': response7["values"][0][0]
+      },
+    {
+        'Bucket': "5s-6s",
+        'Count': response9["values"][0][0]
+      },
+    {   'Bucket': "6s-7s",
+        'Count': response11["values"][0][0]
+      },
+    {   'Bucket': "7s-8s",
+        'Count': response13["values"][0][0]
+      },
+    {   'Bucket': "8s-9s",
+        'Count': response15["values"][0][0]
+      },
+    {   'Bucket': "9s-10s",
+        'Count': response17["values"][0][0]
+      },
+    {   'Bucket': ">10s",
+        'Count': response19["values"][0][0]
+      },
+],
+    types: [
+      {
+        indexRange: [0, 2],
+        mappings: {
+          'Bucket': { type: 'string' },
+          'Count': { type: 'double' }
+        },
+      },
+    ],
+  };
+}

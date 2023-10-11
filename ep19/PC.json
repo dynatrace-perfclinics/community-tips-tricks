@@ -1,0 +1,29 @@
+// Example tile code for a Pie Chart
+
+import { rumUserSessionsClient } from "@dynatrace-sdk/client-classic-environment-v1";
+
+export default async function () {
+  const startTime = Date.parse($dt_timeframe_from).toString();  // Get Dashboard Start Time
+  const endTime = Date.parse($dt_timeframe_to).toString();      // Get Dashboard End Time
+  const usqlQuery = 'select distinct userExperienceScore, count(*) FROM usersession where starttime>='+startTime+' and endtime<='+endTime+' order by count(*) DESC LIMIT 5000';
+  const response = await rumUserSessionsClient.getUsqlResultAsTable({query: usqlQuery, startTimestamp: startTime, endTimestamp: endTime});
+  const sampleCount = response.values.length;
+  
+  return {
+    records: new Array(sampleCount).fill(null).map((_, index, array) => {
+      return {
+        'UX': response.values[index][0],
+        'Count': response.values[index][1]      
+      };
+    }),
+    types: [
+      {
+        indexRange: [0, sampleCount],
+        mappings: {
+          'UX': { type: 'string' },
+          'Count': { type: 'double' }
+        },
+      },
+    ],
+  };
+}

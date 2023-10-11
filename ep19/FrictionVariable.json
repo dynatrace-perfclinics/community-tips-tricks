@@ -1,0 +1,70 @@
+// Variable that determines the KPI causing the most friction with respect to Conversion Rate
+
+import { rumUserSessionsClient } from '@dynatrace-sdk/client-classic-environment-v1';
+
+export default async function () {
+
+  const lastXDays = 7;
+  const appName = "www.angular.easytravel.com"; // Change on deploy
+  const conversionGoal = "Credit card validated"; // Change on deploy
+
+  const query1 = 'SELECT AVG(useraction.Duration),AVG(useraction.VisuallyCompleteTime),AVG(useraction.SpeedIndex),AVG(useraction.LoadEventEnd),AVG(useraction.LargestContentfulPaint),AVG(useraction.DocumentInteractiveTime),AVG(useraction.DomCompleteTime),AVG(useraction.LoadEventStart),AVG(useraction.domContentLoadedTime) FROM usersession WHERE useraction.application="'+appName+'" and usersession.usertype="REAL_USER" and useraction.matchingConversionGoals="'+conversionGoal+'"';
+  const query2 = 'SELECT CONDITION(AVG(useraction.Duration), WHERE useraction.apdexCategory="FRUSTRATED"),CONDITION(AVG(useraction.VisuallyCompleteTime), WHERE useraction.apdexCategory="FRUSTRATED"),CONDITION(AVG(useraction.SpeedIndex), WHERE useraction.apdexCategory="FRUSTRATED"),CONDITION(AVG(useraction.LoadEventEnd), WHERE useraction.apdexCategory="FRUSTRATED"),CONDITION(AVG(useraction.LargestContentfulPaint), WHERE useraction.apdexCategory="FRUSTRATED"),CONDITION(AVG(useraction.DocumentInteractiveTime), WHERE useraction.apdexCategory="FRUSTRATED"),CONDITION(AVG(useraction.DomCompleteTime), WHERE useraction.apdexCategory="FRUSTRATED"),CONDITION(AVG(useraction.LoadEventStart), WHERE useraction.apdexCategory="FRUSTRATED"),CONDITION(AVG(useraction.domContentLoadedTime), WHERE useraction.apdexCategory="FRUSTRATED") FROM usersession WHERE useraction.application="'+appName+'" and usersession.usertype="REAL_USER" and not useraction.matchingConversionGoals="'+conversionGoal+'" and userExperienceScore="FRUSTRATED"';
+  const query3 = 'SELECT CONDITION(COUNT(*), WHERE useraction.apdexCategory="FRUSTRATED" and useraction.duration>3000),CONDITION(COUNT(*), WHERE useraction.apdexCategory="FRUSTRATED" and useraction.VisuallyCompleteTime>3000),CONDITION(COUNT(*), WHERE useraction.apdexCategory="FRUSTRATED" and useraction.SpeedIndex>3000),CONDITION(COUNT(*), WHERE useraction.apdexCategory="FRUSTRATED" and useraction.LoadEventEnd>3000),CONDITION(COUNT(*), WHERE useraction.apdexCategory="FRUSTRATED" and useraction.LargestContentfulPaint>3000),CONDITION(COUNT(*), WHERE useraction.apdexCategory="FRUSTRATED" and useraction.DocumentInteractiveTime>3000),CONDITION(COUNT(*), WHERE useraction.apdexCategory="FRUSTRATED" and useraction.DomCompleteTime>3000),CONDITION(COUNT(*), WHERE useraction.apdexCategory="FRUSTRATED" and useraction.LoadEventStart>3000),CONDITION(COUNT(*), WHERE useraction.apdexCategory="FRUSTRATED" and useraction.domContentLoadedTime>3000) FROM usersession WHERE useraction.application="'+appName+'" and usersession.usertype="REAL_USER" and not useraction.matchingConversionGoals="'+conversionGoal+'" and userExperienceScore="FRUSTRATED"';
+  const result1 = await rumUserSessionsClient.getUsqlResultAsTable({query: query1, startTimestamp: Date.now() - lastXDays * 24 * 60 * 60 * 1000});
+  const result2 = await rumUserSessionsClient.getUsqlResultAsTable({query: query2, startTimestamp: Date.now() - lastXDays * 24 * 60 * 60 * 1000});
+  const result3 = await rumUserSessionsClient.getUsqlResultAsTable({query: query2, startTimestamp: Date.now() - lastXDays * 24 * 60 * 60 * 1000});
+
+    var crst = [];
+    var arst = [];
+    var victims = [];
+    var diffArray = [];
+
+    for (var i = 0; i <= 9; ++i) {
+        crst[i] = result1["values"][0][i]/1000;
+        arst[i] = result2["values"][0][i]/1000;
+        victims[i] = result3["values"][0][i];
+    }
+
+    for (var i = 0; i <= 9; ++i) {
+        if (result1["values"][0][i] == null || result2["values"][0][i] == null) {
+            diffArray[i] = 1;
+        }
+        else {
+            diffArray[i] = ((crst[i]-arst[i])/((crst[i]+arst[i])/2) * 100)*victims[i];
+        }
+    }
+    
+    const min = Math.min(...diffArray);
+    const index = diffArray.indexOf(min);
+
+   switch (index) {
+        case 0:
+        return "Duration";
+       break;
+        case 1:
+        return "VisuallyCompleteTime";
+        break;
+        case 2:
+        return "SpeedIndex";
+        break;
+        case 3:
+        return "LoadEventEnd";
+        break;
+        case 4:
+        return "LargestContentfulPaint";
+        break;
+        case 5:
+        return "DocumentInteractiveTime";
+        break;
+        case 6:
+        return "DomCompleteTime";
+        break;
+        case 6:
+        return "LoadEventStart";
+        break;
+        case 8:
+        return "DomContentLoadedTime";
+        break;
+    }
+}

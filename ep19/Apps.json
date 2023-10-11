@@ -1,0 +1,19 @@
+// Variable that displays Applications
+
+import { rumUserSessionsClient } from "@dynatrace-sdk/client-classic-environment-v1";
+
+export default async function () {
+ const lastXDays = 30;
+ const usqlQuery = 'SELECT DISTINCT application FROM useraction';
+ const response = await rumUserSessionsClient.getUsqlResultAsTable({query: usqlQuery, startTimestamp: Date.now() - lastXDays * 24 * 60 * 60 * 1000});
+ const sampleCount = response.values.length;
+
+ function flatten(arr) {
+    var flat = [];
+    for (var i = 0; i < sampleCount; i++) {
+        flat = flat.concat(arr[i]);
+    }
+    return flat;
+}
+ return( flatten(response.values))
+}

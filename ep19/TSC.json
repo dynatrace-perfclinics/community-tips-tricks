@@ -1,0 +1,38 @@
+// Example tile code for a timeseries graph
+
+import { rumUserSessionsClient } from "@dynatrace-sdk/client-classic-environment-v1";
+export default async function () {
+  const startTime = Date.parse($dt_timeframe_from).toString();  // Get Dashboard Start Time
+  const endTime = Date.parse($dt_timeframe_to).toString();      // Get Dashboard End Time
+  // Calculate Chart Interval
+  const timeDiff = (endTime-startTime)/3600/1000/24;
+  var chartInterval = "1m"
+  if (timeDiff>.5)
+    var chartInterval = "10m"
+  if (timeDiff>1)
+    var chartInterval = "1h"
+  const usqlQuery = 'SELECT DATETIME(endTime,  "MM-dd HH:mm:ss","'+chartInterval+'") AS "Date", CONDITION(count(*), where userExperienceScore="SATISFIED")  AS "Satisfied", CONDITION(count(*), where userExperienceScore="TOLERATED")  AS "Tolerated", CONDITION(count(*), where userExperienceScore="FRUSTRATED")  AS "Frustrated" from usersession WHERE usersession.starttime>='+startTime+' and usersession.endtime<='+endTime+' GROUP BY  DATETIME(endTime,  "MM-dd HH:mm:ss","'+chartInterval+'") limit 5000';
+  const response = await rumUserSessionsClient.getUsqlResultAsTable({query: usqlQuery, startTimestamp: startTime, endTimestamp: endTime});
+  const sampleCount = response.values.length;
+  return {
+    records: new Array(sampleCount).fill(null).map((_, index, array) => {
+      return {
+        Date: response.values[index][0],
+        'Satisfied': (response.values[index][1]),
+        'Tolerated': response.values[index][2],
+        'Frustrated': response.values[index][3]
+      };
+    }),
+    types: [
+      {
+        indexRange: [0, sampleCount],
+        mappings: {
+         Date: { type: 'timestamp' },
+          'Satisfied': { type: 'double' },
+          'Tolerated': { type: 'double' },
+          'Frustrated': { type: 'double' }
+        },
+      },
+    ],
+  };
+}

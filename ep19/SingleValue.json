@@ -1,0 +1,12 @@
+// Example tile code for a Single Value tile
+
+
+import { rumUserSessionsClient } from '@dynatrace-sdk/client-classic-environment-v1';
+  const startTime = Date.parse($dt_timeframe_from).toString();  // Get Dashboard Start Time
+  const endTime = Date.parse($dt_timeframe_to).toString();      // Get Dashboard End Time
+  const query = 'SELECT AVG(DURATION) FROM useraction WHERE starttime>='+startTime+' and endtime<='+endTime;
+
+export default async function () {
+  const result = await rumUserSessionsClient.getUsqlResultAsTable({query: query, startTimestamp: startTime, endTimestamp: endTime});
+  return (result["values"][0][0]/1000).toFixed(2)+"s";
+}
