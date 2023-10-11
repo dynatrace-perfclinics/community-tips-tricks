@@ -4,7 +4,7 @@ Access the [Self-Service Business Dashboard](https://wkf10640.apps.dynatrace.com
 
 ## Video / Content
 
-[![Episode 19](https://img.youtube.com/vi/z9H0zeLwWmI/0.jpg)](https://www.youtube.com/watch?v=z9H0zeLwWmI)
+[![Episode 19](https://img.youtube.com/vi/UrApwUgf0RI/0.jpg)](https://www.youtube.com/watch?v=UrApwUgf0RI)
 
 
 This repo provides Business Grade Dashboards for Dynatrace Gen3. Click on any Dashboard ReadMe file for a detailed description of the Dashboard, Use Cases, Install Instructions and much more. You can download/upload any content and use the dashboard as is. Or you can take certain portions of the dashboard, remove/add content to fit your specific use case. If you are interested in building your own content from scratch within your wireframe, here are a few tile and variable examples to get you started.
