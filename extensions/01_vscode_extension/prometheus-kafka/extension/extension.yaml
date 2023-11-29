@@ -1,0 +1,595 @@
+name: custom:prometheus.kafka
+version: 0.0.7
+minDynatraceVersion: "1.275.0"
+author:
+  name: Radu
+
+prometheus:
+  - group: metrics
+    metrics:      
+      - key: confluent_kafka_server_received_bytes
+        value: metric:confluent_kafka_server_received_bytes
+        type: gauge
+      - key: confluent_kafka_server_sent_bytes
+        value: metric:confluent_kafka_server_sent_bytes
+        type: gauge
+      - key: confluent_kafka_server_received_records
+        value: metric:confluent_kafka_server_received_records
+        type: gauge
+      - key: confluent_kafka_server_sent_records
+        value: metric:confluent_kafka_server_sent_records
+        type: gauge
+      - key: confluent_kafka_server_retained_bytes
+        value: metric:confluent_kafka_server_retained_bytes
+        type: gauge
+      - key: confluent_kafka_server_active_connection
+        value: metric:confluent_kafka_server_active_connection_count
+        type: gauge
+      - key: confluent_kafka_server_request
+        value: metric:confluent_kafka_server_request_count
+        type: gauge
+      - key: confluent_kafka_server_partition
+        value: metric:confluent_kafka_server_partition_count
+        type: gauge
+      - key: confluent_kafka_server_successful_authentication
+        value: metric:confluent_kafka_server_successful_authentication_count
+        type: gauge
+      - key: confluent_kafka_server_consumer_lag_offsets
+        value: metric:confluent_kafka_server_consumer_lag_offsets
+        type: gauge
+      - key: confluent_kafka_server_cluster_link_destination_response_bytes
+        value: metric:confluent_kafka_server_cluster_link_destination_response_bytes
+        type: gauge
+      - key: confluent_kafka_server_cluster_link_source_response_bytes
+        value: metric:confluent_kafka_server_cluster_link_source_response_bytes
+        type: gauge
+      - key: confluent_kafka_server_cluster_link
+        value: metric:confluent_kafka_server_cluster_link_count
+        type: gauge
+      - key: confluent_kafka_server_cluster_link_mirror_topic
+        value: metric:confluent_kafka_server_cluster_link_mirror_topic_count
+        type: gauge
+      - key: confluent_kafka_server_cluster_link_mirror_topic_offset_lag
+        value: metric:confluent_kafka_server_cluster_link_mirror_topic_offset_lag
+        type: gauge
+      - key: confluent_kafka_server_cluster_link_mirror_topic_bytes
+        value: metric:confluent_kafka_server_cluster_link_mirror_topic_bytes
+        type: gauge
+      - key: confluent_kafka_server_cluster_load_percent
+        value: metric:confluent_kafka_server_cluster_load_percent
+        type: gauge
+
+metrics:
+  - key: confluent_kafka_server_received_bytes
+    metadata:
+      displayName: Confluent Kafka Server Received Bytes
+      description: The delta count of bytes of the customer's data received from the network. Each sample is the number of bytes received since the previous data sample. The count is sampled every 60 seconds.
+      unit: Byte
+  - key: confluent_kafka_server_sent_bytes
+    metadata:
+      displayName: Confluent Kafka Server Sent Bytes
+      description: The delta count of bytes of the customer's data sent over the network. Each sample is the number of bytes sent since the previous data point. The count is sampled every 60 seconds.
+      unit: Unspecified
+  - key: confluent_kafka_server_received_records
+    metadata:
+      displayName: Confluent Kafka Server Received Records
+      description: The delta count of records received. Each sample is the number of records received since the previous data sample. The count is sampled every 60 seconds.
+      unit: Unspecified
+  - key: confluent_kafka_server_sent_records
+    metadata:
+      displayName: Confluent Kafka Server Sent Records
+      description: The delta count of records sent. Each sample is the number of records sent since the previous data point. The count is sampled every 60 seconds.
+      unit: Unspecified
+  - key: confluent_kafka_server_retained_bytes
+    metadata:
+      displayName: Confluent Kafka Server Retained Bytes
+      description: The current count of bytes retained by the cluster. The count is sampled every 60 seconds.
+      unit: Unspecified
+  - key: confluent_kafka_server_active_connection
+    metadata:
+      displayName: Confluent Kafka Server Active Connection Count
+      description: The count of active authenticated connections.
+      unit: Unspecified
+  - key: confluent_kafka_server_request
+    metadata:
+      displayName: Confluent Kafka Server Request Count
+      description: The delta count of requests received over the network. Each sample is the number of requests received since the previous data point. The count sampled every 60 seconds.
+      unit: Unspecified
+  - key: confluent_kafka_server_partition
+    metadata:
+      displayName: Confluent Kafka Server Partition Count
+      description: The number of partitions.
+      unit: Unspecified
+  - key: confluent_kafka_server_successful_authentication
+    metadata:
+      displayName: Confluent Kafka Server Successful Authentication Count
+      description: The delta count of successful authentications. Each sample is the number of successful authentications since the previous data point. The count sampled every 60 seconds.
+      unit: Unspecified
+  - key: confluent_kafka_server_consumer_lag_offsets
+    metadata:
+      displayName: Confluent Kafka Server Consumer Lag Offsets
+      description: The lag between a group member's committed offset and the partition's high watermark.
+      unit: Unspecified
+  - key: confluent_kafka_server_cluster_link_destination_response_bytes
+    metadata:
+      displayName: Confluent Kafka Server Cluster Link Destination Response Bytes
+      description: The delta count of cluster linking response bytes from all request types. Each sample is the number of bytes sent since the previous data point. The count is sampled every 60 seconds.
+      unit: Unspecified
+  - key: confluent_kafka_server_cluster_link_source_response_bytes
+    metadata:
+      displayName: Confluent Kafka Server Cluster Link Source Response Bytes
+      description: The delta count of cluster linking source response bytes from all request types. Each sample is the number of bytes sent since the previous data point. The count is sampled every 60 seconds.
+      unit: Unspecified
+  - key: confluent_kafka_server_cluster_link
+    metadata:
+      displayName: Confluent Kafka Server Cluster Link Count
+      description: The current count of cluster links. The count is sampled every 60 seconds. The implicit time aggregation for this metric is MAX.
+      unit: Unspecified
+  - key: confluent_kafka_server_cluster_link_mirror_topic
+    metadata:
+      displayName: Confluent Kafka Server Cluster Link Mirror Topic Count
+      description: The cluster linking mirror topic count for a link. The count is sampled every 60 seconds.
+      unit: Unspecified
+  - key: confluent_kafka_server_cluster_link_mirror_topic_offset_lag
+    metadata:
+      displayName: Confluent Kafka Server Cluster Link Mirror Topic Offset Lag
+      description: The cluster linking mirror topic offset lag maximum across all partitions. The lag is sampled every 60 seconds.
+      unit: Unspecified
+  - key: confluent_kafka_server_cluster_link_mirror_topic_bytes
+    metadata:
+      displayName: Confluent Kafka Server Cluster Link Mirror Topic Bytes
+      description: The delta count of cluster linking mirror topic bytes. The count is sampled every 60 seconds.
+      unit: Unspecified
+  - key: confluent_kafka_server_cluster_load_percent
+    metadata:
+      displayName: Confluent Kafka Server Cluster Load Percent
+      description: A measure of the utilization of the cluster. The value is between 0.0 and 1.0.
+      unit: Unspecified
+
+topology:
+  types:
+    - enabled: true
+      name: confluent:kafka_cluster
+      displayName: Confluent Kafka Cluster
+      rules:
+        - idPattern: confluent_kafka_cluster_{kafka_id}
+          instanceNamePattern: Kafka Cluster - {kafka_id}
+          iconPattern: kafka
+          sources:
+            - sourceType: Metrics
+              condition: $prefix(confluent_kafka)
+          requiredDimensions:
+            - key: kafka_id
+          attributes:
+            - key: cluster
+              pattern: "{kafka_id}"
+              displayName: Cluster
+    - enabled: true
+      name: confluent:kafka_topic
+      displayName: Confluent Kafka Topic
+      rules:
+        - idPattern: confluent_kafka_topic_{kafka_id}_{topic}
+          instanceNamePattern: Kafka Topic - {kafka_id} - {topic}
+          iconPattern: kafka
+          sources:
+            - sourceType: Metrics
+              condition: $prefix(confluent_kafka)
+          requiredDimensions:
+            - key: kafka_id
+            - key: topic
+          attributes:
+            - key: cluster
+              pattern: "{kafka_id}"
+              displayName: Cluster
+            - key: topic
+              pattern: "{topic}"
+              displayName: Topic
+  relationships:
+    - fromType: confluent:kafka_topic
+      typeOfRelation: RUNS_ON
+      toType: confluent:kafka_cluster
+      enabled: true
+      sources:
+        - sourceType: Metrics
+          condition: $prefix(confluent_kafka)
+
+screens:
+  - entityType: confluent:kafka_cluster
+    actions: 
+      - actionScope: GLOBAL_LIST
+        actions: 
+          - actionExpression: hubExtension|extensionId=custom:prometheus.kafka|text=configure
+            visualization:
+              iconOnly: false
+              icon: options-menu
+              displayName: Configure extension
+      - actionScope: GLOBAL_DETAILS
+        actions: 
+          - actionExpression: hubExtension|extensionId=custom:prometheus.kafka|text=configure
+            visualization:
+              iconOnly: false
+              icon: options-menu
+              displayName: Configure extension
+  
+    listSettings:
+      staticContent:
+        showGlobalFilter: false
+        header:
+          title: Confluent Kafka Cluster entities
+          description: List of all entities created by the custom:prometheus.kafka extension
+        hideDefaultBreadcrumb: true
+        breadcrumbs:
+          - type: NOOP
+            displayName: Extension 2.0
+          - type: NOOP
+            displayName: Confluent Kafka Clusters
+      layout:
+        autoGenerate: false
+        cards:
+          - key: confluentkafka_cluster_list_self
+            type: ENTITIES_LIST
+          - type: INJECTIONS
+    detailsSettings:
+      staticContent:
+        showProblems: true
+        showProperties: true
+        showTags: true
+        showGlobalFilter: false
+        showAddTag: true
+        breadcrumbs:
+          - type: NOOP
+            displayName: Extension 2.0
+          - type: ENTITY_LIST_REF
+            entityType: confluent:kafka_cluster
+            displayName: Confluent Kafka Clusters
+      layout:
+        autoGenerate: false
+        cards: 
+          - key: confluentkafka_cluster_charts_default
+            type: CHART_GROUP
+          - key: confluentkafka_cluster_list_confluentkafka_topic
+            type: ENTITIES_LIST
+          - type: INJECTIONS
+    chartsCards: 
+      - key: confluentkafka_cluster_charts_default
+        mode: NORMAL
+        numberOfVisibleCharts: 3
+        displayName: default metrics
+        charts: 
+          - displayName: confluent_kafka_server_received_bytes
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_received_bytes:splitBy("dt.entity.confluent:kafka_cluster")
+          - displayName: confluent_kafka_server_sent_bytes
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_sent_bytes:splitBy("dt.entity.confluent:kafka_cluster")
+          - displayName: confluent_kafka_server_received_records
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_received_records:splitBy("dt.entity.confluent:kafka_cluster")
+          - displayName: confluent_kafka_server_sent_records
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_sent_records:splitBy("dt.entity.confluent:kafka_cluster")
+          - displayName: confluent_kafka_server_retained_bytes
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_retained_bytes:splitBy("dt.entity.confluent:kafka_cluster")
+          - displayName: confluent_kafka_server_active_connection
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_active_connection:splitBy("dt.entity.confluent:kafka_cluster")
+          - displayName: confluent_kafka_server_request
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_request:splitBy("dt.entity.confluent:kafka_cluster")
+          - displayName: confluent_kafka_server_partition
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_partition:splitBy("dt.entity.confluent:kafka_cluster")
+          - displayName: confluent_kafka_server_successful_authentication
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_successful_authentication:splitBy("dt.entity.confluent:kafka_cluster")
+          - displayName: confluent_kafka_server_consumer_lag_offsets
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_consumer_lag_offsets:splitBy("dt.entity.confluent:kafka_cluster")
+          - displayName: confluent_kafka_server_cluster_link_destination_response_bytes
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_cluster_link_destination_response_bytes:splitBy("dt.entity.confluent:kafka_cluster")
+          - displayName: confluent_kafka_server_cluster_link_source_response_bytes
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_cluster_link_source_response_bytes:splitBy("dt.entity.confluent:kafka_cluster")
+          - displayName: confluent_kafka_server_cluster_link
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_cluster_link:splitBy("dt.entity.confluent:kafka_cluster")
+          - displayName: confluent_kafka_server_cluster_link_mirror_topic
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_cluster_link_mirror_topic:splitBy("dt.entity.confluent:kafka_cluster")
+          - displayName: confluent_kafka_server_cluster_link_mirror_topic_offset_lag
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_cluster_link_mirror_topic_offset_lag:splitBy("dt.entity.confluent:kafka_cluster")
+          - displayName: confluent_kafka_server_cluster_link_mirror_topic_bytes
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_cluster_link_mirror_topic_bytes:splitBy("dt.entity.confluent:kafka_cluster")
+          - displayName: confluent_kafka_server_cluster_load_percent
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_cluster_load_percent:splitBy("dt.entity.confluent:kafka_cluster")
+    entitiesListCards: 
+      - key: confluentkafka_cluster_list_self
+        pageSize: 15
+        displayName: List of Confluent Kafka Clusters
+        displayCharts: false
+        enableDetailsExpandability: true
+        numberOfVisibleCharts: 3
+        displayIcons: true
+        hideEmptyCharts: true
+        filtering: 
+          entityFilters:
+            - displayName: Filter by
+              filters:
+                - type: entityName
+                  displayName: Name
+                  freeText: true
+                  modifier: contains
+                  defaultSearch: true
+                  distinct: false
+                  entityTypes:
+                    - confluent:kafka_cluster
+        columns: []
+        charts: []
+      - key: confluentkafka_cluster_list_confluentkafka_topic
+        pageSize: 5
+        displayName: List of related Confluent Kafka Topics
+        displayCharts: false
+        enableDetailsExpandability: true
+        numberOfVisibleCharts: 3
+        displayIcons: true
+        entitySelectorTemplate: type(confluent:kafka_topic),fromRelationships.runsOn($(entityConditions))
+        hideEmptyCharts: true
+        filtering: 
+          entityFilters:
+            - displayName: Filter by
+              filters:
+                - type: entityName
+                  displayName: Name
+                  freeText: true
+                  modifier: contains
+                  defaultSearch: true
+                  distinct: false
+                  entityTypes:
+                    - confluent:kafka_topic
+        columns: []
+        charts:
+          - displayName: confluent_kafka_server_retained_bytes
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_retained_bytes:splitBy("dt.entity.confluent:kafka_topic")
+  - entityType: confluent:kafka_topic
+    actions: 
+      - actionScope: GLOBAL_LIST
+        actions: 
+          - actionExpression: hubExtension|extensionId=custom:prometheus.kafka|text=configure
+            visualization:
+              iconOnly: false
+              icon: options-menu
+              displayName: Configure extension
+      - actionScope: GLOBAL_DETAILS
+        actions: 
+          - actionExpression: hubExtension|extensionId=custom:prometheus.kafka|text=configure
+            visualization:
+              iconOnly: false
+              icon: options-menu
+              displayName: Configure extension
+  
+    listSettings:
+      staticContent:
+        showGlobalFilter: false
+        header:
+          title: Confluent Kafka Topic entities
+          description: List of all entities created by the custom:prometheus.kafka extension
+        hideDefaultBreadcrumb: true
+        breadcrumbs:
+          - type: NOOP
+            displayName: Extension 2.0
+          - type: NOOP
+            displayName: Confluent Kafka Topics
+      layout:
+        autoGenerate: false
+        cards:
+          - key: confluentkafka_topic_list_self
+            type: ENTITIES_LIST
+          - type: INJECTIONS
+    detailsSettings:
+      staticContent:
+        showProblems: true
+        showProperties: true
+        showTags: true
+        showGlobalFilter: false
+        showAddTag: true
+        breadcrumbs:
+          - type: NOOP
+            displayName: Extension 2.0
+          - type: ENTITY_LIST_REF
+            entityType: confluent:kafka_topic
+            displayName: Confluent Kafka Topics
+      layout:
+        autoGenerate: false
+        cards: 
+          - key: confluentkafka_topic_charts_default
+            type: CHART_GROUP
+          - key: confluentkafka_topic_list_confluentkafka_cluster
+            type: ENTITIES_LIST
+          - type: INJECTIONS
+    chartsCards: 
+      - key: confluentkafka_topic_charts_default
+        mode: NORMAL
+        numberOfVisibleCharts: 3
+        displayName: default metrics
+        charts: 
+          - displayName: confluent_kafka_server_received_bytes
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_received_bytes:splitBy("dt.entity.confluent:kafka_topic")
+          - displayName: confluent_kafka_server_sent_bytes
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_sent_bytes:splitBy("dt.entity.confluent:kafka_topic")
+          - displayName: confluent_kafka_server_received_records
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_received_records:splitBy("dt.entity.confluent:kafka_topic")
+          - displayName: confluent_kafka_server_sent_records
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_sent_records:splitBy("dt.entity.confluent:kafka_topic")
+          - displayName: confluent_kafka_server_retained_bytes
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_retained_bytes:splitBy("dt.entity.confluent:kafka_topic")
+          - displayName: confluent_kafka_server_active_connection
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_active_connection:splitBy("dt.entity.confluent:kafka_topic")
+          - displayName: confluent_kafka_server_request
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_request:splitBy("dt.entity.confluent:kafka_topic")
+          - displayName: confluent_kafka_server_partition
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_partition:splitBy("dt.entity.confluent:kafka_topic")
+          - displayName: confluent_kafka_server_successful_authentication
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_successful_authentication:splitBy("dt.entity.confluent:kafka_topic")
+          - displayName: confluent_kafka_server_consumer_lag_offsets
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_consumer_lag_offsets:splitBy("dt.entity.confluent:kafka_topic")
+          - displayName: confluent_kafka_server_cluster_link_destination_response_bytes
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_cluster_link_destination_response_bytes:splitBy("dt.entity.confluent:kafka_topic")
+          - displayName: confluent_kafka_server_cluster_link_source_response_bytes
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_cluster_link_source_response_bytes:splitBy("dt.entity.confluent:kafka_topic")
+          - displayName: confluent_kafka_server_cluster_link
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_cluster_link:splitBy("dt.entity.confluent:kafka_topic")
+          - displayName: confluent_kafka_server_cluster_link_mirror_topic
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_cluster_link_mirror_topic:splitBy("dt.entity.confluent:kafka_topic")
+          - displayName: confluent_kafka_server_cluster_link_mirror_topic_offset_lag
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_cluster_link_mirror_topic_offset_lag:splitBy("dt.entity.confluent:kafka_topic")
+          - displayName: confluent_kafka_server_cluster_link_mirror_topic_bytes
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_cluster_link_mirror_topic_bytes:splitBy("dt.entity.confluent:kafka_topic")
+          - displayName: confluent_kafka_server_cluster_load_percent
+            visualizationType: GRAPH_CHART
+            graphChartConfig:
+              metrics:
+                - metricSelector: confluent_kafka_server_cluster_load_percent:splitBy("dt.entity.confluent:kafka_topic")
+    entitiesListCards: 
+      - key: confluentkafka_topic_list_self
+        pageSize: 15
+        displayName: List of Confluent Kafka Topics
+        displayCharts: false
+        enableDetailsExpandability: true
+        numberOfVisibleCharts: 3
+        displayIcons: true
+        hideEmptyCharts: true
+        filtering: 
+          entityFilters:
+            - displayName: Filter by
+              filters:
+                - type: entityName
+                  displayName: Name
+                  freeText: true
+                  modifier: contains
+                  defaultSearch: true
+                  distinct: false
+                  entityTypes:
+                    - confluent:kafka_topic
+        columns: []
+        charts: []
+      - key: confluentkafka_topic_list_confluentkafka_cluster
+        pageSize: 5
+        displayName: List of related Confluent Kafka Clusters
+        displayCharts: false
+        enableDetailsExpandability: true
+        numberOfVisibleCharts: 3
+        displayIcons: true
+        entitySelectorTemplate: type(confluent:kafka_cluster),toRelationships.runsOn($(entityConditions))
+        hideEmptyCharts: true
+        filtering: 
+          entityFilters:
+            - displayName: Filter by
+              filters:
+                - type: entityName
+                  displayName: Name
+                  freeText: true
+                  modifier: contains
+                  defaultSearch: true
+                  distinct: false
+                  entityTypes:
+                    - confluent:kafka_cluster
+        columns: []
+        charts: []
+
+
+
+dashboards:
+  - path: dashboards/overview_dashboard.json
+
+alerts:
+  - path: alerts/alert-001-kafka-too-many-bytes-received.json

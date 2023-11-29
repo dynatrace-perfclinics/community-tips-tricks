@@ -1,0 +1,23 @@
+{
+  "id": "79cbb6ae-ef7b-4ee4-9bb2-7fe98f565b39",
+  "metricSelector": "confluent_kafka_server_received_bytes",
+  "name": "Kafka: too many bytes received",
+  "description": "The {metricname} value was {alert_condition} normal behavior. Dimensions: {dims}",
+  "enabled": true,
+  "monitoringStrategy": {
+    "type": "STATIC_THRESHOLD",
+    "violatingSamples": 3,
+    "samples": 5,
+    "dealertingSamples": 5,
+    "alertCondition": "ABOVE",
+    "alertingOnMissingData": false,
+    "threshold": 1024
+  },
+  "primaryDimensionKey": "dt.entity.confluent:kafka_cluster",
+  "alertCondition": "ABOVE",
+  "samples": 5,
+  "violatingSamples": 3,
+  "dealertingSamples": 5,
+  "threshold": 1024,
+  "eventType": "CUSTOM_ALERT"
+}

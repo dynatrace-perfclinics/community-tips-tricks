@@ -1,0 +1,574 @@
+{
+  "dashboardMetadata": {
+    "name": "Extension Overview (custom:prometheus.kafka:0.0.4)",
+    "shared": true,
+    "owner": "Dynatrace",
+    "tags": [
+      "Overview",
+      "Extension"
+    ],
+    "preset": true,
+    "popularity": 1
+  },
+  "tiles": [
+    {
+      "name": "Markdown",
+      "nameSize": "",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 152,
+        "width": 1254,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "# Extension Monitoring Overview\n***"
+    },
+    {
+      "name": "Image",
+      "nameSize": "",
+      "tileType": "IMAGE",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 0,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {},
+      "image": "data:image/webp;base64,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"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 152,
+        "left": 0,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "## Currently monitoring\n"
+    },
+    {
+      "name": "Markdown",
+      "nameSize": "",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 76,
+        "left": 152,
+        "width": 1254,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "## ⚙️ [Configure extension](/ui/hub/ext/custom:prometheus.kafka)\n## 🔗 Navigate to entities: [Confluent Kafka Cluster](ui/entity/list/confluent:kafka_cluster) | [Confluent Kafka Topic](ui/entity/list/confluent:kafka_topic)"
+    },
+    {
+      "name": "Title Confluent Kafka Cluster",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 0,
+        "width": 1406,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "## Confluent Kafka Cluster"
+    },
+    {
+      "name": "Confluent Kafka Cluster",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 190,
+        "left": 0,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {},
+      "customName": "Single value",
+      "queries": [
+        {
+          "id": "A",
+          "timeAggregation": "DEFAULT",
+          "metricSelector": "confluent_kafka_server_received_bytes:splitBy(\"dt.entity.confluent:kafka_cluster\"):auto:splitBy():count",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {},
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "COLUMN"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": "",
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "displayName": "",
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [ "A" ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "heatmapSettings": {},
+        "singleValueSettings": {
+          "showSparkLine": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              { "color": "#7dc540" },
+              { "color": "#f5d30f" },
+              { "color": "#dc172a" }
+            ],
+            "visible": true
+          }
+        ],
+        "tableSettings": {},
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {}
+      }
+    },
+    {
+      "name": "Confluent Kafka Server Received Bytes",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 418,
+        "left": 570,
+        "width": 418,
+        "height": 266
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "confluent_kafka_server_received_bytes",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": ["dt.entity.confluent:kafka_cluster"],
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {},
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {"color": "DEFAULT"},
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {"visible": true},
+          "yAxes": []
+        },
+        "heatmapSettings": {},
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {"color": "#7dc540"},
+              {"color": "#f5d30f"},
+              {"color": "#dc172a"}
+            ],
+            "visible": true
+          }
+        ],
+        "tableSettings": {},
+        "graphChartSettings": {"connectNulls": false},
+        "honeycombSettings": {}
+      }
+    },
+    {
+      "name": "Confluent Kafka Server Sent Bytes",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 418,
+        "left": 988,
+        "width": 418,
+        "height": 266
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "confluent_kafka_server_sent_bytes",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": ["dt.entity.confluent:kafka_cluster"],
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {},
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {"color": "DEFAULT"},
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {"visible": true},
+          "yAxes": []
+        },
+        "heatmapSettings": {},
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {"color": "#7dc540"},
+              {"color": "#f5d30f"},
+              {"color": "#dc172a"}
+            ],
+            "visible": true
+          }
+        ],
+        "tableSettings": {},
+        "graphChartSettings": {"connectNulls": false},
+        "honeycombSettings": {}
+      }
+    },
+    {
+      "name": "Confluent Kafka Cluster",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 418,
+        "left": 0,
+        "width": 570,
+        "height": 266
+      },
+      "tileFilter": {},
+      "customName": "Table",
+      "queries": [
+                {
+          "id": "A",
+          "metric": "confluent_kafka_server_received_bytes",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [ "dt.entity.confluent:kafka_cluster" ],
+          "enabled": true
+        },
+        {
+          "id": "B",
+          "metric": "confluent_kafka_server_sent_bytes",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [ "dt.entity.confluent:kafka_cluster" ],
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TABLE",
+        "global": {},
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {"color": "DEFAULT"},
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {"visible": true},
+          "yAxes": []
+        },
+        "heatmapSettings": {},
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {"color": "#7dc540"},
+              {"color": "#f5d30f"},
+              {"color": "#dc172a"}
+            ],
+            "visible": true
+          }
+        ],
+        "tableSettings": {},
+        "graphChartSettings": {"connectNulls": false},
+        "honeycombSettings": {}
+      }
+    },
+    {
+      "name": "Title Confluent Kafka Topic",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 684,
+        "left": 0,
+        "width": 1406,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "## Confluent Kafka Topic"
+    },
+    {
+      "name": "Confluent Kafka Topic",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 190,
+        "left": 152,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {},
+      "customName": "Single value",
+      "queries": [
+        {
+          "id": "A",
+          "timeAggregation": "DEFAULT",
+          "metricSelector": "confluent_kafka_server_received_bytes:splitBy(\"dt.entity.confluent:kafka_topic\"):auto:splitBy():count",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {},
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "COLUMN"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": "",
+            "visible": true
+          },
+          "yAxes": [
+            {
+              "displayName": "",
+              "visible": true,
+              "min": "AUTO",
+              "max": "AUTO",
+              "position": "LEFT",
+              "queryIds": [ "A" ],
+              "defaultAxis": true
+            }
+          ]
+        },
+        "heatmapSettings": {},
+        "singleValueSettings": {
+          "showSparkLine": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              { "color": "#7dc540" },
+              { "color": "#f5d30f" },
+              { "color": "#dc172a" }
+            ],
+            "visible": true
+          }
+        ],
+        "tableSettings": {},
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {}
+      }
+    },
+    {
+      "name": "Confluent Kafka Server Received Bytes",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 722,
+        "left": 570,
+        "width": 418,
+        "height": 266
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "confluent_kafka_server_received_bytes",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": ["dt.entity.confluent:kafka_topic"],
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {},
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {"color": "DEFAULT"},
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {"visible": true},
+          "yAxes": []
+        },
+        "heatmapSettings": {},
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {"color": "#7dc540"},
+              {"color": "#f5d30f"},
+              {"color": "#dc172a"}
+            ],
+            "visible": true
+          }
+        ],
+        "tableSettings": {},
+        "graphChartSettings": {"connectNulls": false},
+        "honeycombSettings": {}
+      }
+    },
+    {
+      "name": "Confluent Kafka Server Sent Bytes",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 722,
+        "left": 988,
+        "width": 418,
+        "height": 266
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "confluent_kafka_server_sent_bytes",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": ["dt.entity.confluent:kafka_topic"],
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {},
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {"color": "DEFAULT"},
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {"visible": true},
+          "yAxes": []
+        },
+        "heatmapSettings": {},
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {"color": "#7dc540"},
+              {"color": "#f5d30f"},
+              {"color": "#dc172a"}
+            ],
+            "visible": true
+          }
+        ],
+        "tableSettings": {},
+        "graphChartSettings": {"connectNulls": false},
+        "honeycombSettings": {}
+      }
+    },
+    {
+      "name": "Confluent Kafka Topic",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 722,
+        "left": 0,
+        "width": 570,
+        "height": 266
+      },
+      "tileFilter": {},
+      "customName": "Table",
+      "queries": [
+                {
+          "id": "A",
+          "metric": "confluent_kafka_server_received_bytes",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [ "dt.entity.confluent:kafka_topic" ],
+          "enabled": true
+        },
+        {
+          "id": "B",
+          "metric": "confluent_kafka_server_sent_bytes",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [ "dt.entity.confluent:kafka_topic" ],
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TABLE",
+        "global": {},
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {"color": "DEFAULT"},
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {"visible": true},
+          "yAxes": []
+        },
+        "heatmapSettings": {},
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {"color": "#7dc540"},
+              {"color": "#f5d30f"},
+              {"color": "#dc172a"}
+            ],
+            "visible": true
+          }
+        ],
+        "tableSettings": {},
+        "graphChartSettings": {"connectNulls": false},
+        "honeycombSettings": {}
+      }
+    }
+  ]
+}
