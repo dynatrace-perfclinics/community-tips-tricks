@@ -12,7 +12,7 @@ in the [exporter](./exporter_details) file.
 
 The extension, as it was written during the episode is in the [prometheus-kafka](./prometheus-kafka/) folder.
 
-[![VideoImage](https://img.freepik.com/free-vector/abstract-grunge-style-coming-soon-with-black-splatter_1017-26690.jpg)](https://www.youtube.com/watch?v=Rz813IQ6pLE)
+[![VideoImage](https://img.youtube.com/vi/Qy4Ge8HIzEk/0.jpg)](https://www.youtube.com/watch?v=Qy4Ge8HIzEk)
 
 ### Useful links
 
